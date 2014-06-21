@@ -11,6 +11,8 @@ feature 'Maker signs up' do
 
   scenario "with a password that doesn't match" do
     expect{ sign_up("test@test.com", "Julia", "test_handle", "testtest", "wrongtest") }.to change(Maker, :count).by 0
+    expect(current_path).to eq '/makers'
+    expect(page).to have_content 'Sorry, your passwords do not match'
   end
 
   def sign_up(email="test@test.com",
