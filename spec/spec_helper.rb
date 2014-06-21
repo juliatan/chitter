@@ -1,8 +1,9 @@
 ENV["RACK_ENV"] = "test" # sets the database to be used
 
 require './app/server' # note that this has to come after ENV is set!
-
 require 'database_cleaner'
+require 'capybara/rspec'
+Capybara.app = Sinatra::Application.new
 
 RSpec.configure do |config|
 
