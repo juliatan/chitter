@@ -10,9 +10,9 @@ feature 'Maker signs up' do
   end
 
   scenario "with a password that doesn't match" do
-
+    expect{ sign_up("test@test.com", "Julia", "test_handle", "testtest", "wrongtest") }.to change(Maker, :count).by 0
   end
-  
+
   def sign_up(email="test@test.com",
               name="Julia",
               username="test_handle",
@@ -26,5 +26,6 @@ feature 'Maker signs up' do
     fill_in :password_confirmation, :with => password_confirmation
     click_button 'Register'
   end
+  
 
 end

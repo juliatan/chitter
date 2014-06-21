@@ -10,7 +10,10 @@ class Maker
   property :username, Text
   property :password_digest, Text
 
-  attr_writer :password_confirmation
+  attr_reader :password
+  attr_accessor :password_confirmation
+
+  validates_confirmation_of :password
 
   def password=(password)
     @password = password
