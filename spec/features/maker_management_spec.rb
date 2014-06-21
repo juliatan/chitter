@@ -5,10 +5,14 @@ feature 'Maker signs up' do
   scenario 'whilst logged out' do
     expect{ sign_up }.to change(Maker, :count).by 1
     expect(page).to have_content "Welcome Julia"
-    expect(User.first.email).to eq "test@test.com"
-    expect(User.first.username).to eq "test_handle"
+    expect(Maker.first.email).to eq "test@test.com"
+    expect(Maker.first.username).to eq "test_handle"
   end
 
+  scenario "with a password that doesn't match" do
+
+  end
+  
   def sign_up(email="test@test.com",
               name="Julia",
               username="test_handle",
