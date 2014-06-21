@@ -6,4 +6,3 @@ require_relative 'models/peep'
 require_relative 'models/maker'
 
 DataMapper.finalize # checked for consistency
-DataMapper.auto_upgrade! # actual creation of databases
