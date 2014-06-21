@@ -20,4 +20,17 @@ class Maker
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def self.authenticate(username, password)
+    maker = first(:username => username)
+    # the == method calculates the candidate password_digest from
+    # the password given and compares it to the password_digest
+    # it was initialised with.
+    # So, to recap: THIS IS NOT A STRING COMPARISON
+    if maker && BCrypt::Password.new(maker.password_digest) == password
+      maker # return the user
+    else
+      nil
+    end
+  end
+
 end

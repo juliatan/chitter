@@ -26,3 +26,28 @@ feature 'Maker signs up' do
   end
 
 end
+
+feature 'Maker signs in' do
+
+  before(:each) {
+    Maker.create(:email => "test@test.com",
+                  :name => "Julia",
+                  :username => "test_handle",
+                  :password => "test",
+                  :password_confirmation => "test")
+  }
+
+  scenario "can sign in with correct credentials" do
+    visit '/'
+    expect(page).not_to have_content "Welcome Julia"
+    sign_in("test_handle", "test")
+    expect(page).to have_content "Welcome Julia"
+  end
+
+  scenario "cannot sign in with incorrect credentials" do
+    visit '/'
+    expect(page).not_to have_content "Welcome Julia"
+    sign_in("test_handle", "wrong")
+    expect(page).not_to have_content "Welcome Julia"
+  end
+end
