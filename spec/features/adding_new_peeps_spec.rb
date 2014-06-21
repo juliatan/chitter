@@ -4,7 +4,7 @@ feature 'Maker submits a new peep'do
   
   scenario "when browsing the website" do
     expect(Peep.count).to eq 0
-    visit '/peeps/new'
+    visit '/'
     add_peep("Hello world!")
     expect(Peep.count).to eq 1
     peep = Peep.first
@@ -12,6 +12,7 @@ feature 'Maker submits a new peep'do
   end
 
   def add_peep(text)
+    visit '/peeps/new'
     fill_in 'text', :with => text
     click_button 'Peep'
   end
