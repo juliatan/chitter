@@ -1,4 +1,7 @@
-
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
+<% if flash[:errors] && !flash[:errors].empty? %>
+  <ul id="errors">
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
 <% end %>

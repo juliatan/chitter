@@ -21,7 +21,7 @@ post '/makers' do
     session[:maker_id] = @maker.id
     redirect to '/'
   else
-    flash.now[:notice] = "Sorry, your passwords do not match"
+    flash.now[:errors] = @maker.errors.full_messages # full_messages returns an array of all errors as strings
     erb :"makers/new"
   end
 end

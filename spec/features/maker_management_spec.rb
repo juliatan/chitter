@@ -15,6 +15,13 @@ feature 'Maker signs up' do
     expect(page).to have_content 'Sorry, your passwords do not match'
   end
 
+  scenario "with an email and username that is already registered" do
+    expect{ sign_up }.to change(Maker, :count).by 1
+    expect{ sign_up }.to change(Maker, :count).by 0
+    expect(page).to have_content 'This email has already been registered'
+    expect(page).to have_content 'This username has already been taken'
+  end
+
   def sign_up(email="test@test.com",
               name="Julia",
               username="test_handle",
