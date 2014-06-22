@@ -1,6 +1,16 @@
 <h1>Enter your Peep</h1>
 
-<form method="post" action="/peeps">
-  <input type="text" name="text" placeholder="Enter your peep here!">
-  <input type="submit" value="Peep" class="button">
-</form>
+<% if current_user %>
+
+  <form method="post" action="/peeps">
+    <input type="text" name="text" placeholder="Enter your peep here!">
+    <input type="hidden" name="name" value="<%= current_user.name %>">
+    <input type="hidden" name="username" value="<%= current_user.username %>">
+    <input type="submit" value="Peep" class="button">
+  </form>
+
+<% else %>
+
+  You need to sign up for a Maker account before you can post a peep.
+
+<% end %>
