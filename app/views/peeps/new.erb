@@ -1,11 +1,10 @@
-<h1>Enter your Peep</h1>
-
 <% if current_user %>
 
-  <form method="post" action="/peeps">
-    <input type="text" name="text" placeholder="Enter your peep here!">
-    <input type="hidden" name="maker_id" value="<%= @current_user.id %>">
-    <input type="submit" value="Peep" class="button">
+  <form class="form-signin" method="post" action="/peeps" role="form">
+    <h1>Enter your Peep</h1>
+    <textarea class="form-control" name="text" placeholder="Enter your peep here!" rows="3"></textarea>
+    <input class="form-control" type="hidden" name="maker_id" value="<%= @current_user.id %>">
+    <button class="btn btn-lg btn-primary" type="submit">Peep</button>
   </form>
 
 <% else %>

@@ -1,5 +1,8 @@
+
 <% @peeps.reverse_each do |peep| %>
-  <%= peep.text %>
-  <%= peep.maker.name %>
-  @<%= peep.maker.username %>
+<div class="well">
+  <h2><%= peep.text %></h2>
+  <p><%= peep.maker.name %>
+  @<%= peep.maker.username %></p>
+</div>
 <% end %>

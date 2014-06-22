@@ -5,6 +5,13 @@
  */
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+.user {
+  margin-right: 40px;
+  margin-top: 3px;
+  font-size: 24px;
+  color: #eb9316;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -734,8 +741,8 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 300px;
+  padding-left: 300px;
   margin-right: auto;
   margin-left: auto;
 }

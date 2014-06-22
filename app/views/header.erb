@@ -1,14 +1,19 @@
 <div class="header">
 
   <% if current_user %>
-    Welcome <%= current_user.name %>
-    <a href="/peeps/new" class="button">Post peep</a>
+    <ul class="nav nav-pills pull-right">
+      <li class="user">Welcome <%= current_user.name %></li>
+      <li class="active">
+      <a href="/peeps/new" class="button">Post peep</a>
+      </li>
 
-    <form action ="/sessions" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="hidden" name="name" value="<%= current_user.name %>"> 
-      <input type="submit" value="Log out">
-    </form>
+      <li><form action ="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="name" value="<%= current_user.name %>"> 
+        <input type="submit" value="Log out" class="btn btn-danger">
+      </form></li>
+     
+    </ul>
 
   <% else %>
 
