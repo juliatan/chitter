@@ -10,7 +10,7 @@ post '/sessions' do
     session[:maker_id] = maker.id
     redirect to '/'
   else
-    flash[:errors] = "The email or password is incorrect"
+    flash.now[:notice] = "The email or password is incorrect"
     erb :"sessions/new"
   end
 
