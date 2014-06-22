@@ -1,4 +1,4 @@
-<% @peeps.each do |peep| %>
+<% @peeps.reverse_each do |peep| %>
   <%= peep.text %>
   <%= peep.maker.name %>
   @<%= peep.maker.username %>
