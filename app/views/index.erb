@@ -1,3 +1,5 @@
 <% @peeps.each do |peep| %>
   <%= peep.text %>
+  <%= peep.maker.name %>
+  @<%= peep.maker.username %>
 <% end %>

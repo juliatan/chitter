@@ -4,8 +4,7 @@
 
   <form method="post" action="/peeps">
     <input type="text" name="text" placeholder="Enter your peep here!">
-    <input type="hidden" name="name" value="<%= current_user.name %>">
-    <input type="hidden" name="username" value="<%= current_user.username %>">
+    <input type="hidden" name="maker_id" value="<%= @current_user.id %>">
     <input type="submit" value="Peep" class="button">
   </form>
 

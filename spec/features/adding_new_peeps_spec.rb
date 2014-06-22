@@ -1,9 +1,12 @@
 require 'spec_helper'
+require_relative 'helpers/sessions'
+
+include SessionHelpers
 
 feature 'Maker submits a new peep'do
   
   before(:each) {
-    Maker.create(:email => "test@test.com",
+    @maker = Maker.create(:email => "test@test.com",
                   :name => "Julia",
                   :username => "test_handle",
                   :password => "test",
@@ -18,15 +21,14 @@ feature 'Maker submits a new peep'do
 
   scenario "when logged in" do
     expect(Peep.count).to eq 0
-    visit '/'
     sign_in("test_handle", "test")
-    add_peep("Hello world!")
+    add_peep("Hello world!", @maker.id)
     expect(Peep.count).to eq 1
     peep = Peep.first
     expect(peep.text).to eq "Hello world!"
   end
 
-  def add_peep(text)
+  def add_peep(text, maker_id)
     visit '/peeps/new'
     fill_in 'text', :with => text
     click_button 'Peep'

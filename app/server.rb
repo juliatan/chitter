@@ -4,6 +4,7 @@ require 'sinatra/partial'
 require 'sinatra/flash'
 
 require_relative 'data_mapper_setup'
+require_relative 'controllers/application'
 require_relative 'controllers/peeps'
 require_relative 'controllers/makers'
 require_relative 'controllers/sessions'

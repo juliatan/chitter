@@ -5,4 +5,5 @@ class Peep
   property :id, Serial
   property :text, Text
 
+  belongs_to :maker
 end
