@@ -15,3 +15,10 @@ post '/sessions' do
   end
 
 end
+
+delete '/sessions' do
+  name = params[:name]
+  flash[:notice] = "Goodbye #{name}"
+  session[:maker_id] = nil
+  redirect to '/'
+end

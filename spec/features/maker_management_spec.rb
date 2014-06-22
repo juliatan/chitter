@@ -51,3 +51,22 @@ feature 'Maker signs in' do
     expect(page).not_to have_content "Welcome Julia"
   end
 end
+
+feature 'User signs out' do
+
+  before(:each) {
+    Maker.create(:email => "test@test.com",
+                  :name => "Julia",
+                  :username => "test_handle",
+                  :password => "test",
+                  :password_confirmation => "test")
+  }
+
+  scenario 'while being signed in' do
+    sign_in("test_handle", "test")
+    click_button 'Log out'
+    expect(page).to have_content "Goodbye Julia"
+    expect(page).not_to have_content "Welcome Julia"
+  end
+
+end
