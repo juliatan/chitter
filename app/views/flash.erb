@@ -1,12 +1,17 @@
 <!-- For printing "Goodbye Name" -->
 <% if flash[:notice] %>
+<div class="alert alert-success">
   <%= flash[:notice] %>
+</div>
 <% end %>
 
+
 <% if flash[:errors] && !flash[:errors].empty? %>
-  <ul id="errors">
+<div class="alert alert-danger">
+  <ul>
     <% flash[:errors].each do |error| %>
       <li><%= error %></li>
     <% end %>
   </ul>
+</div>
 <% end %>

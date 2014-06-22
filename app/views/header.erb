@@ -1,16 +1,26 @@
-<% if current_user %>
-  Welcome <%= current_user.name %>
-  <a href="/peeps/new" class="button">Post peep</a>
+<div class="header">
 
-  <form action ="/sessions" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="hidden" name="name" value="<%= current_user.name %>"> 
-    <input type="submit" value="Log out">
-  </form>
+  <% if current_user %>
+    Welcome <%= current_user.name %>
+    <a href="/peeps/new" class="button">Post peep</a>
 
-<% else %>
+    <form action ="/sessions" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="name" value="<%= current_user.name %>"> 
+      <input type="submit" value="Log out">
+    </form>
 
-  <a href="/sessions/new" class="button">Sign in</a>
-  <a href="/makers/new" class="button">Sign up</a>  
+  <% else %>
 
-<% end %>
+    <ul class="nav nav-pills pull-right">
+      <li class="active"><a href="/sessions/new">Sign in</a></li>
+      <li><a href="/makers/new" class="button">Sign up</a></li>
+    </ul>
+
+  <% end %>
+
+  <h1 class="text-muted">
+    <a href="/">CHITTER</a>
+  </h1>
+
+</div>

@@ -1,10 +1,9 @@
-<h1>Register as a Maker</h1>
-
-<form method="post" action="/makers">
-  <input type="text" name="name" placeholder="Name" value="<%= @maker.name %>">
-  <input type="email" name="email" placeholder="Email" value="<%= @maker.email %>">
-  <input type="text" name="username" placeholder="Username" value="<%= @maker.username %>">
-  <input type="password" name="password" placeholder="Password">
-  <input type="password" name="password_confirmation" placeholder="Confirm your password">
-  <input type="submit" value="Register" class="button">
+<form class="form-signin" method="post" action="/makers" role="form">
+  <h2 class="form-signin-heading">Register as a Maker</h2>
+  <input class="form-control" type="text" name="name" placeholder="Name" value="<%= @maker.name %>">
+  <input class="form-control" type="email" name="email" placeholder="Email" value="<%= @maker.email %>">
+  <input class="form-control" type="text" name="username" placeholder="Username" value="<%= @maker.username %>">
+  <input class="form-control" type="password" name="password" placeholder="Password">
+  <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm your password">
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
 </form>

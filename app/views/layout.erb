@@ -2,13 +2,19 @@
   
   <head>
     <title>Chitter - a Twitter Clone</title>
-    <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css"> -->
-    <link rel="stylesheet" type="text/css" href="/css/application.css">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
   </head>
 
   <body>
-    <%= partial :header %>
-    <%= partial :flash %>
-    <%= yield %>
+    <div class="container">
+
+      <%= partial :header %>
+    
+      <%= partial :flash %>
+      
+      <%= yield %>
+
+    </div>
   </body>
 </html>
