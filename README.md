@@ -40,6 +40,8 @@ cd chitter
 shotgun
 ```
 
+Visit http://localhost:9393 in your browser.
+
 How to run tests
 ----------------
 ```sh
