@@ -18,6 +18,8 @@ The objective was to write a mini Twitter clone that would allow users to post m
 - Peeps have the name of the Maker and their username
 - Bcrypt used to secure the passwords
 - DataMapper and Postgres used to save data
+ 
+![](public/img/chitter_screenshot.png)
 
 Technologies used
 -----------------
